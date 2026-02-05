@@ -23,7 +23,7 @@ GitSniffer hooks into your workflow at the most critical moment: **pre-commit**.
 Install it globally to use it across all your projects:
 
 ```bash
-npm install -g gitsniffer
+npm install -g @re3se/gitsniffer
 ```
 
 ## 🚀 Usage

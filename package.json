@@ -1,5 +1,5 @@
 {
-  "name": "@00re3se/gitsniffer",
+  "name": "@re3se/gitsniffer",
   "version": "1.0.0",
   "description": "An intelligent CLI tool that prevents bad code and security leaks from entering your repository.",
   "main": "src/index.js",
@@ -19,7 +19,7 @@
     "clean-code",
     "pre-commit"
   ],
-  "author": "00re3se",
+  "author": "re3se",
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.3.0",
