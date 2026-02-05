@@ -5,6 +5,8 @@
 
 GitSniffer is a CLI tool designed to act as an intelligent filter for your codebase. It ensures that no debug leftovers, private keys, or sloppy comments make their way into your repository. It's not just a linter, it's a gatekeeper for quality.
 
+![Terminal Preview](src/assets/terminal.png)
+
 ## 🚀 The Philosophy
 I build ecosystems where quality is non-negotiable. GitSniffer was born from a simple need: **intentionality**.
 
