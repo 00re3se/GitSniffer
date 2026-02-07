@@ -35,6 +35,21 @@ Run it manually in any git repository:
 gitsniffer --run
 ```
 
+### Advanced Options
+
+**Scan Working Directory (Unstaged)**
+If you want to check your code *before* staging it:
+```bash
+gitsniffer --working
+```
+
+**Auto-Fix Issues**
+Automatically remove `console.log`, `debugger`, and other problematic lines:
+```bash
+gitsniffer --fix
+```
+> **Note:** After running `--fix`, you must run `git add .` to update your staged changes.
+
 ### Automate with Git Hooks
 To enforce quality standards automatically, add it to your pre-commit hook.
 

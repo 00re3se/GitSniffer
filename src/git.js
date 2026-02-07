@@ -8,16 +8,34 @@ const BINARY_EXTENSIONS = new Set([
   '.mp3', '.mp4', '.mov', '.avi', '.woff', '.woff2', '.ttf', '.eot'
 ]);
 
-export async function getGitDiff() {
+export async function isGitRepo() {
   try {
-    const { stdout: stagedFiles } = await execa('git', ['diff', '--name-only', '--cached']);
+    await execa('git', ['rev-parse', '--is-inside-work-tree']);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+export async function getGitDiff(options = { type: 'staged' }) {
+  try {
+    const gitArgs = ['diff', '--name-only'];
+    const diffArgs = ['diff', '--unified=0'];
+
+    if (options.type === 'staged') {
+      gitArgs.push('--cached');
+      diffArgs.push('--cached');
+    }
+
+    const { stdout: filesOutput } = await execa('git', gitArgs);
     
-    const { stdout: diffOutput } = await execa('git', ['diff', '--cached', '--unified=0']);
+    if (!filesOutput) return [];
+
+    const { stdout: diffOutput } = await execa('git', diffArgs);
     
     return parseDiff(diffOutput);
   } catch (error) {
-    console.error('Error executing git command:', error.message);
-    return [];
+    throw error;
   }
 }
 

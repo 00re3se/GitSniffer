@@ -1,6 +1,6 @@
 {
   "name": "@re3se/gitsniffer",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An intelligent CLI tool that prevents bad code and security leaks from entering your repository.",
   "main": "src/index.js",
   "type": "module",
